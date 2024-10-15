@@ -36,9 +36,14 @@ public class PruebaGestionProductos {
 		gestor.imprimirTodo();
 	Producto error=new Producto(2,"Pringles", 3);
 		gestor.addProducto(error);
-		
-	
-		
+		System.out.println("Lista de productos de tipo 1");
+		gestor.imprimirPorTipo(1);
+		System.out.println("Lista de productos de tipo 2");
+		gestor.imprimirPorTipo(2);
+		System.out.println("Lista de productos de tipo 3");
+		gestor.imprimirPorTipo(3);
+		System.out.println("Lista de productos de tipo 4");
+		gestor.imprimirPorTipo(4);				
 	}
 
 }

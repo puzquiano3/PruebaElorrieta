@@ -70,5 +70,16 @@ public class GestorProductos {
 			System.out.println("Hay "+cont+" posiciones libres");
 		}
 	}
+	public void imprimirPorTipo(int tipo) {
+		for (int i = 0; i < productos.length; i++) {
+			
+			if(productos[i]!=null) {
+				if(productos[i].getTipo()==tipo) {
+					System.out.println(productos[i].toString());
+				}
+			}
+			
+		}
+	}
 
 }
