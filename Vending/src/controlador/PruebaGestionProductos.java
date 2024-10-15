@@ -43,10 +43,7 @@ public class PruebaGestionProductos {
 		System.out.println("Lista de productos de tipo 3");
 		gestor.imprimirPorTipo(3);
 		System.out.println("Lista de productos de tipo 4");
-		gestor.imprimirPorTipo(4);
-		
-	
-		
+		gestor.imprimirPorTipo(4);				
 	}
 
 }
