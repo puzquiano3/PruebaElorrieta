@@ -2,7 +2,7 @@ package modelo;
 
 public class Producto {
 	
-
+		//Pruebas con objetos
 		public static final int BEBIDA=1;
 		public static final int SNACK=2;
 		public static final int GOMINOLA=3;
