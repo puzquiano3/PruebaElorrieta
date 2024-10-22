@@ -12,6 +12,8 @@ import vista.paneles.Panel1;
 import vista.paneles.Panel2;
 import vista.paneles.PanelInicial;
 import vista.paneles.PanelInterno;
+import vista.paneles.PanelProductos;
+import vista.paneles.PanelTipos;
 
 
 
@@ -53,7 +55,10 @@ public class VentanaPrincipal extends JFrame {
 
     // Método para mostrar un Panel1, Panel2, etc.
     public void mostrarPanel1() {
-        cambiarPanel(new Panel1(this));
+        cambiarPanel(new PanelTipos(this));
+    }
+    public void mostrarPanelProductos(int n) {
+    	cambiarPanel(new PanelProductos(this,n));
     }
     public void mostrarPanel2() {
         cambiarPanel(new Panel2(this));

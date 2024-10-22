@@ -11,6 +11,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.CardLayout;
 import java.awt.FlowLayout;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class PanelInicial extends JPanel {
 
@@ -20,6 +22,12 @@ public class PanelInicial extends JPanel {
 	 * Create the panel.
 	 */
 	public PanelInicial(VentanaPrincipal ventana) {
+		addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				ventana.mostrarPanel1();
+			}
+		});
 		setLayout(new BorderLayout(0, 0));
 		
 		JPanel panel = new JPanel();
@@ -28,24 +36,6 @@ public class PanelInicial extends JPanel {
 		
 		JLabel lblNewLabel = new JLabel("BIENVENIDOS A MI APLICACION");
 		panel.add(lblNewLabel);
-		
-		JButton btn1 = new JButton("panel1");
-	
-		btn1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				ventana.mostrarPanel1();
-			}
-		});
-		
-		JButton btn2 = new JButton("panel2");
-		btn2.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				ventana.mostrarPanel2();
-				
-			}
-		});
-		panel.add(btn1);
-		panel.add(btn2);
 	
 	
 
