@@ -1,25 +1,25 @@
 package controlador;
 import controlador.GestorProductos;
-import modelo.Producto;
+import modelo.Productos;
 
 public class PruebaGestionProductos {
 	
 	
 	
 	public static void main(String[] args) {
-		Producto coca=new Producto(Producto.BEBIDA, "Coca cola", 1.25);
-		Producto fantaN=new Producto(Producto.BEBIDA, "Fanta Naranja", 1.25);
-		Producto fantaL=new Producto(Producto.BEBIDA, "Fanta Limon", 1.25);
-		Producto agua=new Producto(Producto.BEBIDA, "Agua", 1);
+		Productos coca=new Productos(Productos.BEBIDA, "Coca cola", 1.25);
+		Productos fantaN=new Productos(Productos.BEBIDA, "Fanta Naranja", 1.25);
+		Productos fantaL=new Productos(Productos.BEBIDA, "Fanta Limon", 1.25);
+		Productos agua=new Productos(Productos.BEBIDA, "Agua", 1);
 		
-		Producto patatas=new Producto(Producto.SNACK, "Patatas chips", 1.15);
-		Producto pringles=new Producto(Producto.SNACK, "Pringles", 1.15);	
+		Productos patatas=new Productos(Productos.SNACK, "Patatas chips", 1.15);
+		Productos pringles=new Productos(Productos.SNACK, "Pringles", 1.15);	
 		
-		Producto ositos=new Producto(Producto.GOMINOLA,"ositos",1.00);
-		Producto regalices=new Producto(Producto.GOMINOLA,"regalices",0.8);
+		Productos ositos=new Productos(Productos.GOMINOLA,"ositos",1.00);
+		Productos regalices=new Productos(Productos.GOMINOLA,"regalices",0.8);
 		
-		Producto donuts=new Producto(Producto.BOLLERIA,"Donuts",1.50);
-		Producto palmeraChocolate=new Producto(Producto.BOLLERIA,"Palmera de chocolate",1.4);
+		Productos donuts=new Productos(Productos.BOLLERIA,"Donuts",1.50);
+		Productos palmeraChocolate=new Productos(Productos.BOLLERIA,"Palmera de chocolate",1.4);
 		
 		GestorProductos gestor=new GestorProductos(16);
 
@@ -34,7 +34,7 @@ public class PruebaGestionProductos {
 		gestor.addProducto(fantaL);
 		gestor.addProducto(fantaN);
 		gestor.imprimirTodo();
-	Producto error=new Producto(2,"Pringles", 3);
+	Productos error=new Productos(2,"Pringles", 3);
 		gestor.addProducto(error);
 		System.out.println("Lista de productos de tipo 1");
 		gestor.imprimirPorTipo(1);

@@ -1,16 +1,16 @@
 package controlador;
 
-import modelo.Producto;
+import modelo.Productos;
 
 public class GestorProductos {
 
-	Producto[] productos;
+	Productos[] productos;
 
 	public GestorProductos(int dimension) {
-		productos = new Producto[dimension];
+		productos = new Productos[dimension];
 	}
 
-	public boolean addProducto(Producto p) {
+	public boolean addProducto(Productos p) {
 		int pos = -1; // variable para guardar la primera posición vacía
 
 		for (int n = 0; n < productos.length; n++) {
@@ -30,11 +30,11 @@ public class GestorProductos {
 		return false;
 	}
 
-	public Producto getProducto(int pos) {
+	public Productos getProducto(int pos) {
 		return productos[pos];
 	}
 
-	public Producto getProducto(String nombre) {
+	public Productos getProducto(String nombre) {
 		for (int n = 0; n < productos.length; n++) {
 			if (productos[n].getNombre().equals(nombre)) {
 				return productos[n];
@@ -43,8 +43,8 @@ public class GestorProductos {
 		return null;
 	}
 
-	private boolean comprobarProducto(Producto p) {
-		for (Producto producto : productos) {
+	private boolean comprobarProducto(Productos p) {
+		for (Productos producto : productos) {
 			if(producto !=null) {
 			if (producto.getNombre().equals(p.getNombre())) {
 				System.out.println("Ya existe un producto con este nombre");
