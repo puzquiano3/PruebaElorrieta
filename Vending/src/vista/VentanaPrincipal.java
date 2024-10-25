@@ -24,7 +24,7 @@ public class VentanaPrincipal extends JFrame {
     public VentanaPrincipal() {
         setTitle("Aplicación con Paneles");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(400, 300);
+        setSize(679, 586);
         setLocationRelativeTo(null);
         
         // Configuración inicial del contenido

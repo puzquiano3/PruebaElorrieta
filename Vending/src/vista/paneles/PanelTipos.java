@@ -9,6 +9,11 @@ import javax.swing.JButton;
 import javax.swing.ImageIcon;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.GridLayout;
+import net.miginfocom.swing.MigLayout;
+import java.awt.FlowLayout;
+import javax.swing.JLabel;
+import java.awt.Font;
 
 public class PanelTipos extends JPanel {
 
@@ -18,45 +23,54 @@ public class PanelTipos extends JPanel {
 	 * Create the panel.
 	 */
 	public PanelTipos(VentanaPrincipal v) {
+		setLayout(null);
 		
-		JButton btnNewButton = new JButton("");
-		btnNewButton.addActionListener(new ActionListener() {
+		JPanel panel = new JPanel();
+		panel.setBounds(144, 97, 371, 245);
+		add(panel);
+		panel.setLayout(null);
+		
+		JButton btnBebidas = new JButton("BEBIDAS");
+		btnBebidas.setBounds(20, 10, 161, 56);
+		panel.add(btnBebidas);
+		btnBebidas.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				v.mostrarPanelProductos(Productos.BEBIDA);
 			}
 		});
-		btnNewButton.setIcon(new ImageIcon("C:\\Users\\pauz_\\git\\repository\\Vending\\multimedia\\productos\\bebidas.png"));
-		add(btnNewButton);
+		btnBebidas.setIcon(new ImageIcon("C:\\Users\\pauz_\\git\\repository\\Vending\\multimedia\\productos\\bebidas.png"));
 		
-		JButton btnNewButton_1 = new JButton("");
-		btnNewButton_1.addActionListener(new ActionListener() {
+		JButton btnSnacks = new JButton("SNACKS");
+		btnSnacks.setBounds(20, 61, 161, 56);
+		panel.add(btnSnacks);
+		btnSnacks.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				v.mostrarPanelProductos(Productos.SNACK);
 				
 			}
 		});
-		btnNewButton_1.setIcon(new ImageIcon("C:\\Users\\pauz_\\git\\repository\\Vending\\multimedia\\productos\\snakcs.png"));
-		add(btnNewButton_1);
+		btnSnacks.setIcon(new ImageIcon("C:\\Users\\pauz_\\git\\repository\\Vending\\multimedia\\productos\\snakcs.png"));
 		
-		JButton btnNewButton_2 = new JButton("");
-		btnNewButton_2.addActionListener(new ActionListener() {
+		JButton btnBolleria = new JButton("BOLLERIA");
+		btnBolleria.setBounds(20, 114, 161, 56);
+		panel.add(btnBolleria);
+		btnBolleria.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				v.mostrarPanelProductos(Productos.BOLLERIA);
 			}
 		});
-		btnNewButton_2.setIcon(new ImageIcon("C:\\Users\\pauz_\\git\\repository\\Vending\\multimedia\\productos\\bolleria.png"));
-		btnNewButton_2.setSelectedIcon(null);
-		add(btnNewButton_2);
+		btnBolleria.setIcon(new ImageIcon("C:\\Users\\pauz_\\git\\repository\\Vending\\multimedia\\productos\\bolleria.png"));
+		btnBolleria.setSelectedIcon(null);
 		
-		JButton btnNewButton_3 = new JButton("");
-		btnNewButton_3.addActionListener(new ActionListener() {
+		JButton btnGominiolas = new JButton("GOMINOLAS");
+		btnGominiolas.setBounds(20, 169, 161, 56);
+		panel.add(btnGominiolas);
+		btnGominiolas.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				v.mostrarPanelProductos(Productos.GOMINOLA);
 			}
 		});
-		btnNewButton_3.setIcon(new ImageIcon("C:\\Users\\pauz_\\git\\repository\\Vending\\multimedia\\productos\\gominolas.png"));
-		add(btnNewButton_3);
+		btnGominiolas.setIcon(new ImageIcon("C:\\Users\\pauz_\\git\\repository\\Vending\\multimedia\\productos\\gominolas.png"));
 
 	}
-
 }
