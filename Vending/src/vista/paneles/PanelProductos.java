@@ -7,6 +7,7 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import controlador.GestorProductos;
 import modelo.Productos;
 import vista.VentanaPrincipal;
 
@@ -59,25 +60,9 @@ public class PanelProductos extends JPanel {
 
 	}
 	private void inicializarProductos(int tipo) {
-		switch (tipo) {
-		case Productos.BEBIDA:{
-			productos=Productos.bebidas;
-			precios= Productos.preciosBebidas;
-			break;}
-		case Productos.BOLLERIA:{
-			productos= Productos.bollerias;
-			precios= Productos.preciosBollerias;
-			break;}
-		case Productos.GOMINOLA:{
-			productos= Productos.gominolas;
-			precios = Productos.preciosGominolas;
-			break;}
-		case Productos.SNACK:{
-			productos= Productos.snacks;
-			precios= Productos.preciosSnacks;
-			break;}
-			
-		}
+		if(GestorProductos.numProductosTipo(tipo)>0)
+			productos=GestorProductos.getProductosTipo(tipo);
+			precios= GestorProductos.getPreciosTipo(tipo);
 		
 	}
 
