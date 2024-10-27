@@ -1,5 +1,6 @@
 package vista.paneles;
 
+import java.awt.GridLayout;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -17,6 +18,7 @@ import vista.VentanaPrincipal;
 public class PanelProductos extends JPanel {
 	JLabel[] lblProductos;
 	JButton[] btnProductos;
+	JPanel botonera;
 	
 
 	private static final long serialVersionUID = 1L;
@@ -45,7 +47,7 @@ public class PanelProductos extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				v.mostrarPanel1();
+				v.mostrarPanelTipos();
 
 			}
 		});
@@ -72,9 +74,10 @@ public class PanelProductos extends JPanel {
 
 			lblProductos[n] = new JLabel(productos[n]);
 			lblProductos[n].setName("" + n);
-			this.add(btnProductos[n]);
-			this.add(lblProductos[n]);
+			botonera.add(btnProductos[n]);
+			botonera.add(lblProductos[n]);
 		}
+		this.add(botonera);
 		this.repaint();
 		this.revalidate();
 		this.setVisible(true);
@@ -83,6 +86,8 @@ public class PanelProductos extends JPanel {
 
 	private void inicializarProductos(int tipo) {
 		int cant=GestorProductos.numProductosTipo(tipo);
+		botonera=new JPanel();
+		botonera.setLayout(new GridLayout (cant,2));
 		if (cant> 0) {
 			identificadores=GestorProductos.getIdentificadoresTipo(tipo);
 			productos = GestorProductos.getProductosTipo(tipo);
@@ -94,13 +99,11 @@ public class PanelProductos extends JPanel {
 	}
 
 	private JButton crearBoton(String nombre, String rutaImagen,int id) {
-		JButton boton = new JButton(nombre);
+		JButton boton = new JButton();
 		ImageIcon imagenOriginal = new ImageIcon(rutaImagen);
-
 		// Escalar la imagen al tamaño del botón
 		Image imagenEscalada = imagenOriginal.getImage().getScaledInstance(100, 100, Image.SCALE_SMOOTH);
 		ImageIcon iconoEscalado = new ImageIcon(imagenEscalada);
-
 		// Establecer la imagen escalada como icono del botón
 		boton.setIcon(iconoEscalado);
 		boton.setActionCommand(Integer.toString(id));

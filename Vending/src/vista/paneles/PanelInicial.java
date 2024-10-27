@@ -25,7 +25,7 @@ public class PanelInicial extends JPanel {
 		addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				ventana.mostrarPanel1();
+				ventana.mostrarPanelTipos();
 			}
 		});
 		setLayout(new BorderLayout(0, 0));
