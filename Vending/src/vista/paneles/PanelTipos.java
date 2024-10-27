@@ -18,6 +18,7 @@ import java.awt.Font;
 public class PanelTipos extends JPanel {
 
 	private static final long serialVersionUID = 1L;
+	private String ruta="multimedia\\tipos\\";
 
 	/**
 	 * Create the panel.
@@ -38,7 +39,7 @@ public class PanelTipos extends JPanel {
 				v.mostrarPanelProductos(Productos.BEBIDA);
 			}
 		});
-		btnBebidas.setIcon(new ImageIcon("C:\\Users\\pauz_\\git\\repository\\Vending\\multimedia\\productos\\bebidas.png"));
+		btnBebidas.setIcon(new ImageIcon(ruta+"bebidas.png"));
 		
 		JButton btnSnacks = new JButton("SNACKS");
 		btnSnacks.setBounds(20, 61, 161, 56);
@@ -49,7 +50,7 @@ public class PanelTipos extends JPanel {
 				
 			}
 		});
-		btnSnacks.setIcon(new ImageIcon("C:\\Users\\pauz_\\git\\repository\\Vending\\multimedia\\productos\\snakcs.png"));
+		btnSnacks.setIcon(new ImageIcon(ruta+"snakcs.png"));
 		
 		JButton btnBolleria = new JButton("BOLLERIA");
 		btnBolleria.setBounds(20, 114, 161, 56);
@@ -59,7 +60,7 @@ public class PanelTipos extends JPanel {
 				v.mostrarPanelProductos(Productos.BOLLERIA);
 			}
 		});
-		btnBolleria.setIcon(new ImageIcon("C:\\Users\\pauz_\\git\\repository\\Vending\\multimedia\\productos\\bolleria.png"));
+		btnBolleria.setIcon(new ImageIcon(ruta+"bolleria.png"));
 		btnBolleria.setSelectedIcon(null);
 		
 		JButton btnGominiolas = new JButton("GOMINOLAS");
@@ -70,7 +71,7 @@ public class PanelTipos extends JPanel {
 				v.mostrarPanelProductos(Productos.GOMINOLA);
 			}
 		});
-		btnGominiolas.setIcon(new ImageIcon("C:\\Users\\pauz_\\git\\repository\\Vending\\multimedia\\productos\\gominolas.png"));
+		btnGominiolas.setIcon(new ImageIcon(ruta+"gominolas.png"));
 
 	}
 }
