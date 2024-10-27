@@ -7,10 +7,13 @@ public class GestorProductos {
 	public static int numProductosTipo(int tipo) {
 		int cont=0;
 		for(int n=0;n<Productos.tipos.length;n++) {
+	
 			if(Productos.tipos[n]== tipo) cont++;
 		}
 		return cont;
 	}
+	
+	
 	public static String[] getProductosTipo(int tipo) {
 		int cantidad= numProductosTipo(tipo);
 		if (cantidad>0) {
@@ -29,6 +32,22 @@ public class GestorProductos {
 		
 		return null;
 	}
+	public static String[] getImagenesTipo(int tipo) {
+		int cantidad= numProductosTipo(tipo);
+		if (cantidad>0) {
+			String[] imagenes=new String[cantidad];
+			int cont=0;
+			for(int n=0;n<Productos.imagenes.length;n++) {
+				if(Productos.tipos[n]==tipo) {
+					imagenes[cont]=Productos.imagenes[n];
+					cont++;				
+				}
+			}
+			return imagenes;
+		
+	}
+		return null;
+	}
 	public static double[] getPreciosTipo(int tipo) {
 		int cantidad= numProductosTipo(tipo);
 		if (cantidad>0) {
@@ -40,10 +59,11 @@ public class GestorProductos {
 					cont++;				
 				}
 			}
-			
-		
+					
 	}
 		
 		return null;
 	}
+
+
 }
