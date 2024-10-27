@@ -64,6 +64,37 @@ public class GestorProductos {
 		
 		return null;
 	}
+	public static int[] getIdentificadoresTipo(int tipo) {
+		int cantidad= numProductosTipo(tipo);
+		if (cantidad>0) {
+			int[] id=new int[cantidad];
+			int cont=0;
+			for(int n=0;n<Productos.identificador.length;n++) {
+				if(Productos.tipos[n]==tipo) {
+					id[cont]=Productos.identificador[n];
+					cont++;				
+				}
+			}
+			return id;
+					
+	}
+		
+		return null;
+	
+	}
+	
+	public static int getPosicion(int id) {
+		
+		for(int n=0;n<Productos.identificador.length;n++) {
+			if(Productos.identificador[n]==id) return n;
+		}
+		
+		return -1;
+	}
+	public static void comprar(int id) {
+		Productos.cantidadComprada[getPosicion(id)]++;
+		
+	}
 
 
 }
