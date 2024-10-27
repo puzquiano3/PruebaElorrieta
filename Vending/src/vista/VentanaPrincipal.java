@@ -1,5 +1,6 @@
 package vista;
 
+import java.awt.BorderLayout;
 import java.awt.CardLayout;
 import java.awt.EventQueue;
 
@@ -11,7 +12,9 @@ import javax.swing.border.EmptyBorder;
 
 import vista.paneles.PanelInicial;
 import vista.paneles.PanelInterno;
+import vista.paneles.PanelPago;
 import vista.paneles.PanelProductos;
+import vista.paneles.PanelResumen;
 import vista.paneles.PanelTipos;
 
 
@@ -25,10 +28,11 @@ public class VentanaPrincipal extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(679, 586);
         setLocationRelativeTo(null);
+        setLayout(new BorderLayout());
         
         // Configuración inicial del contenido
         panelActual = new PanelInicial(this); // Mostrar PanelPrincipal al inicio
-        getContentPane().add(panelActual);
+        getContentPane().add(panelActual,BorderLayout.CENTER);
 
         setVisible(true);
     }
@@ -40,7 +44,7 @@ public class VentanaPrincipal extends JFrame {
         
         // Cambiar al nuevo panel
         panelActual = nuevoPanel;
-        getContentPane().add(panelActual);
+        getContentPane().add(panelActual,BorderLayout.CENTER);
         
         // Actualizar la interfaz gráfica
         revalidate();
@@ -51,6 +55,9 @@ public class VentanaPrincipal extends JFrame {
     public void mostrarPanelInicio() {
         cambiarPanel(new PanelInicial(this));
     }
+    public void mostrarPanelResumen() {
+        cambiarPanel(new PanelResumen(this));
+    }
 
     // Método para mostrar un Panel1, Panel2, etc.
     public void mostrarPanelTipos() {
@@ -58,6 +65,9 @@ public class VentanaPrincipal extends JFrame {
     }
     public void mostrarPanelProductos(int n) {
     	cambiarPanel(new PanelProductos(this,n));
+    }
+    public void mostrarPanelPago() {
+    	cambiarPanel(new PanelPago(this));
     }
 
 

@@ -59,10 +59,21 @@ public class GestorProductos {
 					cont++;				
 				}
 			}
-					
+				return precios;	
 	}
 		
 		return null;
+	}
+	
+	public static double totalConIva() {
+		double total=0;
+		for(int n=0; n<Productos.cantidadComprada.length;n++) {
+			if(Productos.cantidadComprada[n]>0) {
+				total+=Productos.cantidadComprada[n]*Productos.precios[n];
+			}
+		}
+		
+		return total;
 	}
 	public static int[] getIdentificadoresTipo(int tipo) {
 		int cantidad= numProductosTipo(tipo);
