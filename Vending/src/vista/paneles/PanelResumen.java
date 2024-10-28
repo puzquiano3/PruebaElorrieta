@@ -11,6 +11,7 @@ import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
+import controlador.GestorProductos;
 import modelo.Productos;
 import vista.VentanaPrincipal;
 
@@ -64,10 +65,14 @@ public class PanelResumen extends JPanel {
 				texto+=Productos.cantidadComprada[n]+" Ud. de "+Productos.nombres[n]+" Precio unitario= "+Productos.precios[n]+"\n";
 				
 			}
-			textArea.setText(texto);
+			
+			
 			textArea.setFont(new Font("Monospaced", Font.PLAIN, 18));
 			
 		}
+		texto+="----------------\n";
+		texto+="TOTAL CON IVA ="+GestorProductos.totalConIva();
+		textArea.setText(texto);
 		textArea.repaint();
 		textArea.revalidate();
 		

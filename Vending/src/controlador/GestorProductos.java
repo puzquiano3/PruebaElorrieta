@@ -66,10 +66,11 @@ public class GestorProductos {
 	}
 	
 	public static double totalConIva() {
+		double productoIva=1.21;
 		double total=0;
 		for(int n=0; n<Productos.cantidadComprada.length;n++) {
 			if(Productos.cantidadComprada[n]>0) {
-				total+=Productos.cantidadComprada[n]*Productos.precios[n];
+				total+=Productos.cantidadComprada[n]*Productos.precios[n]*productoIva;
 			}
 		}
 		
