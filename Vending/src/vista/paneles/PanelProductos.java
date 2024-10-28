@@ -74,7 +74,6 @@ public class PanelProductos extends JPanel {
 				}
 			});
 
-			//lblProductos[n] = new JLabel(productos[n]+" "+precios[n]+ " Euros");
 			lblProductos[n] = new JLabel(String.format(productos[n]+" %.2f Euros",precios[n]));
 			lblProductos[n].setName("" + n);
 			botonera.add(btnProductos[n]);
@@ -126,18 +125,14 @@ public class PanelProductos extends JPanel {
 		gridLayout.setHgap(10);
 		botonera.setLayout(gridLayout);
 		
-		
-		
 		if (cant> 0) {
 			identificadores=GestorProductos.getIdentificadoresTipo(tipo);
 			productos = GestorProductos.getProductosTipo(tipo);
 			precios = GestorProductos.getPreciosTipo(tipo);
 			imagenes = GestorProductos.getImagenesTipo(tipo);
 			
-
 	}
 	}
-
 	private JButton crearBoton(String nombre, String rutaImagen,int id) {
 		JButton boton = new JButton();
 		ImageIcon imagenOriginal = new ImageIcon(rutaImagen);
