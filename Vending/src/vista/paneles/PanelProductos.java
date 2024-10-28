@@ -50,7 +50,7 @@ public class PanelProductos extends JPanel {
 		setLayout(new BorderLayout());
 
 		JButton btnAtras = new JButton("ATRAS");
-		JButton finalizarCompra= new JButton("FINALIZAR COMPRA");
+		JButton btnResumen= new JButton("VER RESUMEN");
 		principal=new JPanel();
 		principal.setLayout(new GridLayout(1,2));
        if(GestorProductos.numProductosTipo(tipo)>0) {
@@ -90,7 +90,7 @@ public class PanelProductos extends JPanel {
 		principal.add(new JScrollPane(textArea));
 		this.add(btnAtras,BorderLayout.NORTH);
 		this.add(principal,BorderLayout.CENTER);
-		this.add(finalizarCompra,BorderLayout.SOUTH);
+		this.add(btnResumen,BorderLayout.SOUTH);
 		this.repaint();
 		this.revalidate();
 		this.setVisible(true);
@@ -105,7 +105,7 @@ public class PanelProductos extends JPanel {
 
 			}
 		});
-		finalizarCompra.addActionListener(new ActionListener() {
+		btnResumen.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {

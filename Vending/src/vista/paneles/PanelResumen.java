@@ -59,7 +59,7 @@ public class PanelResumen extends JPanel {
 	}
 	private void rellenarProductosComprados() {
 		textArea.removeAll();
-		String texto="";
+		String texto="### RESUMEN DE COMPRA ###\n";
 		for(int n=0;n<Productos.nombres.length;n++) {
 			if(Productos.cantidadComprada[n]>0) {
 				texto+=Productos.cantidadComprada[n]+" Ud. de "+Productos.nombres[n]+" Precio unitario= "+Productos.precios[n]+"\n";
@@ -70,8 +70,8 @@ public class PanelResumen extends JPanel {
 			textArea.setFont(new Font("Monospaced", Font.PLAIN, 18));
 			
 		}
-		texto+="----------------\n";
-		texto+="TOTAL CON IVA ="+GestorProductos.totalConIva();
+		texto+="----------------\n";	
+		texto+=String.format("TOTAL CON IVA = %.2f Euros",GestorProductos.totalConIva());
 		textArea.setText(texto);
 		textArea.repaint();
 		textArea.revalidate();

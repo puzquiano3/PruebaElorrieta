@@ -17,7 +17,8 @@ public class Administrador {
 	}
 	
 	public static void mostrarProductos() {
-		
+		System.out.println("--------------------");
+		System.out.println("PRODUCTOS EXISTENTES");
 	 for (int n=0;n<Productos.nombres.length;n++) {
 		 System.out.print("Posicion ["+n+"] ");
 		 if(Productos.identificador[n]>-1) {
@@ -26,12 +27,13 @@ public class Administrador {
 			 System.out.println("DISPONIBLE");
 		 }
 	 }
-	
+		System.out.println("--------------------");
 	
 	}
 	public static  void mostrarMenu(Scanner t,VentanaPrincipal v) {
 		boolean seguir=true;
 		while (seguir) {
+			mostrarProductos();
 		
 		System.out.println("Elige una opción");
 		System.out.println("1: Nuevo producto");
@@ -117,10 +119,17 @@ public class Administrador {
 	 
  }
  public static int obtenerID(Scanner t) {
-	 int id;
+	 int id,idTemp;
 	 t.nextLine();
+	 System.out.println("Los siguientes identificadores no están disponibles");
+	 for(int n=0;n<Productos.identificador.length;n++) {
+		 idTemp=Productos.identificador[n];
+		 if(idTemp!=-1) {
+		 System.out.print("["+idTemp+"] ");}
+	 }
+	 System.out.println("\n---------------------------");
 	 try {
-		 System.out.println("Introduzca un entero como identificador");
+		 System.out.println("Introduzca un entero disponible positivo como identificador");
 		 id=t.nextInt();
 		 if(GestorProductos.getPosicion(id)!=-1) {
 			 System.out.println("El identificador ("+id+") esta ocupado");
