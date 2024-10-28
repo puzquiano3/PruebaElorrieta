@@ -1,6 +1,7 @@
 package vista.paneles;
 
 import java.awt.BorderLayout;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -64,6 +65,7 @@ public class PanelResumen extends JPanel {
 				
 			}
 			textArea.setText(texto);
+			textArea.setFont(new Font("Monospaced", Font.PLAIN, 18));
 			
 		}
 		textArea.repaint();

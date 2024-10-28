@@ -3,13 +3,16 @@ package vista;
 import java.awt.BorderLayout;
 import java.awt.CardLayout;
 import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 import javax.swing.border.EmptyBorder;
 
-
+import controlador.Administrador;
 import vista.paneles.PanelInicial;
 import vista.paneles.PanelInterno;
 import vista.paneles.PanelPago;
@@ -21,6 +24,7 @@ import vista.paneles.PanelTipos;
 
 public class VentanaPrincipal extends JFrame {
     private static final long serialVersionUID = 1L;
+    
     private JPanel panelActual; // Panel que se muestra actualmente
 
     public VentanaPrincipal() {
@@ -29,12 +33,29 @@ public class VentanaPrincipal extends JFrame {
         setSize(679, 586);
         setLocationRelativeTo(null);
         setLayout(new BorderLayout());
+        JPanel superior=new JPanel();
+        superior.setLayout(new BorderLayout());
+        JButton btnAdmin=new JButton();
+        superior.add(btnAdmin,BorderLayout.WEST);
+        
         
         // Configuración inicial del contenido
         panelActual = new PanelInicial(this); // Mostrar PanelPrincipal al inicio
+        getContentPane().add(superior,BorderLayout.NORTH);
         getContentPane().add(panelActual,BorderLayout.CENTER);
 
         setVisible(true);
+        
+        btnAdmin.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				setVisible(false);
+				Administrador.administrar(VentanaPrincipal.this);
+				
+			}
+		});
     }
 
     // Método para cambiar el panel actual

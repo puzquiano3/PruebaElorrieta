@@ -90,8 +90,16 @@ public class GestorProductos {
 					
 	}
 		
+		
 		return null;
 	
+	}
+	
+	public static int getPosicionLibre() {
+		for(int n=0;n<Productos.nombres.length;n++) {
+			if(Productos.identificador[n]==-1)return n;
+		}
+		return -1;
 	}
 	
 	public static int getPosicion(int id) {

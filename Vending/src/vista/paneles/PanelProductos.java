@@ -17,6 +17,7 @@ import javax.swing.JTextArea;
 import controlador.GestorProductos;
 import modelo.Productos;
 import vista.VentanaPrincipal;
+import java.awt.Font;
 
 public class PanelProductos extends JPanel {
 	JLabel[] lblProductos;
@@ -52,11 +53,10 @@ public class PanelProductos extends JPanel {
 		JButton finalizarCompra= new JButton("FINALIZAR COMPRA");
 		principal=new JPanel();
 		principal.setLayout(new GridLayout(1,2));
-
+       if(GestorProductos.numProductosTipo(tipo)>0) {
 		lblProductos = new JLabel[productos.length];
 		btnProductos = new JButton[productos.length];
-	
-	
+       
 
 		for (int n = 0; n < productos.length; n++) {
 			btnProductos[n] = crearBoton(productos[n], "multimedia\\productos\\" + imagenes[n],identificadores[n]);
@@ -80,7 +80,9 @@ public class PanelProductos extends JPanel {
 			botonera.add(btnProductos[n]);
 			botonera.add(lblProductos[n]);
 		}
+       }
 			textArea = new JTextArea();  // Ajusta las filas y columnas según sea necesario
+			textArea.setFont(new Font("Monospaced", Font.PLAIN, 18));
 	        textArea.setLineWrap(true);
 	        textArea.setWrapStyleWord(true);
 	        
@@ -155,7 +157,8 @@ public class PanelProductos extends JPanel {
 		String texto="";
 		for(int n=0;n<Productos.nombres.length;n++) {
 			if(Productos.cantidadComprada[n]>0 && Productos.tipos[n]==tipo) {
-				texto+=Productos.cantidadComprada[n]+" Ud. de "+Productos.nombres[n]+" Precio unitario= "+Productos.precios[n]+"\n";
+				texto+=Productos.cantidadComprada[n]+" Ud. de "+Productos.nombres[n]+
+						"\n Precio unitario= "+Productos.precios[n]+"\n---------------\n";
 				
 			}
 			textArea.setText(texto);
