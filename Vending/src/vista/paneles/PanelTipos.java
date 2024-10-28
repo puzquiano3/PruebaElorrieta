@@ -10,6 +10,8 @@ import javax.swing.ImageIcon;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.GridLayout;
+import java.awt.Image;
+
 import net.miginfocom.swing.MigLayout;
 
 import java.awt.BorderLayout;
@@ -35,35 +37,33 @@ public class PanelTipos extends JPanel {
 		add(panel,BorderLayout.CENTER);
 		panel.setLayout(new GridLayout(4, 1, 0, 0));
 		
-		JButton btnBebidas = new JButton("BEBIDAS");
+		JButton btnBebidas = crearBoton("BEBIDAS",ruta+"bebidas.png");
 		panel.add(btnBebidas);
 		btnBebidas.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				v.mostrarPanelProductos(Productos.BEBIDA);
 			}
 		});
-		btnBebidas.setIcon(new ImageIcon(ruta+"bebidas.png"));
+
 		
-		JButton btnBolleria = new JButton("BOLLERIA");
+		JButton btnBolleria = crearBoton("BOLLERIA",ruta+"bolleria.png");
 		panel.add(btnBolleria);
 		btnBolleria.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				v.mostrarPanelProductos(Productos.BOLLERIA);
 			}
 		});
-		btnBolleria.setIcon(new ImageIcon(ruta+"bolleria.png"));
-		btnBolleria.setSelectedIcon(null);
+	
 		
-		JButton btnGominiolas = new JButton("GOMINOLAS");
+		JButton btnGominiolas = crearBoton("GOMINOLAS",ruta+"gominolas.png");
 		panel.add(btnGominiolas);
 		btnGominiolas.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				v.mostrarPanelProductos(Productos.GOMINOLA);
 			}
 		});
-		btnGominiolas.setIcon(new ImageIcon(ruta+"gominolas.png"));
 		
-		JButton btnSnacks = new JButton("SNACKS");
+		JButton btnSnacks = crearBoton("SNACKS",ruta+"snakcs.png");
 		panel.add(btnSnacks);
 		btnSnacks.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -71,7 +71,18 @@ public class PanelTipos extends JPanel {
 				
 			}
 		});
-		btnSnacks.setIcon(new ImageIcon(ruta+"snakcs.png"));
+
+	}
+	private JButton crearBoton(String nombre, String rutaImagen) {
+		JButton boton = new JButton(nombre);
+		ImageIcon imagenOriginal = new ImageIcon(rutaImagen);
+		// Escalar la imagen al tamaño del botón
+		Image imagenEscalada = imagenOriginal.getImage().getScaledInstance(100, 100, Image.SCALE_SMOOTH);
+		ImageIcon iconoEscalado = new ImageIcon(imagenEscalada);
+		// Establecer la imagen escalada como icono del botón
+		boton.setIcon(iconoEscalado);
+
+		return boton;
 
 	}
 }
