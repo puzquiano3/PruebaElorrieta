@@ -28,7 +28,7 @@ public class PanelInicial extends JPanel {
 				ventana.mostrarPanelTipos();
 			}
 		});
-		setLayout(new BorderLayout(0, 0));
+		setLayout(new BorderLayout(1, 0));
 		
 		JPanel panel = new JPanel();
 		add(panel, BorderLayout.NORTH);

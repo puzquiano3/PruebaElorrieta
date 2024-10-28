@@ -22,7 +22,7 @@ import java.awt.Font;
 public class PanelProductos extends JPanel {
 	JLabel[] lblProductos;
 	JButton[] btnProductos;
-	JPanel botonera,principal;
+	JPanel botonera,principal,btnAtras;
 	 JTextArea textArea;
 	
 	
@@ -49,7 +49,7 @@ public class PanelProductos extends JPanel {
 		inicializarProductos(tipo);
 		setLayout(new BorderLayout());
 
-		JButton atras = new JButton("ATRAS");
+		JButton btnAtras = new JButton("ATRAS");
 		JButton finalizarCompra= new JButton("FINALIZAR COMPRA");
 		principal=new JPanel();
 		principal.setLayout(new GridLayout(1,2));
@@ -88,7 +88,7 @@ public class PanelProductos extends JPanel {
 		
 		principal.add(botonera);
 		principal.add(new JScrollPane(textArea));
-		this.add(atras,BorderLayout.NORTH);
+		this.add(btnAtras,BorderLayout.NORTH);
 		this.add(principal,BorderLayout.CENTER);
 		this.add(finalizarCompra,BorderLayout.SOUTH);
 		this.repaint();
@@ -96,7 +96,7 @@ public class PanelProductos extends JPanel {
 		this.setVisible(true);
 		rellenarProductosComprados();
 		
-		atras.addActionListener(new ActionListener() {
+		btnAtras.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {

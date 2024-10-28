@@ -32,14 +32,27 @@ public class PanelTipos extends JPanel {
 		setLayout(new BorderLayout());
 		
 		JPanel panel = new JPanel();
-		
+		JButton btnAtras= new JButton("ATRAS");
 		panel.setPreferredSize(new Dimension(100, 100));
+		add(btnAtras,BorderLayout.NORTH);	
 		add(panel,BorderLayout.CENTER);
-		
 		panel.setLayout(new GridLayout(4, 1, 10, 10));
-		
 		JButton btnBebidas = crearBoton("BEBIDAS",ruta+"bebidas.png");
 		panel.add(btnBebidas);
+		JButton btnBolleria = crearBoton("BOLLERIA",ruta+"bolleria.png");
+		JButton btnGominiolas = crearBoton("GOMINOLAS",ruta+"gominolas.png");
+		JButton btnSnacks = crearBoton("SNACKS",ruta+"snakcs.png");
+		panel.add(btnBolleria);
+		panel.add(btnGominiolas);
+		panel.add(btnSnacks);
+		btnAtras.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				v.mostrarPanelInicio();
+			}
+		});
 		btnBebidas.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				v.mostrarPanelProductos(Productos.BEBIDA);
@@ -47,8 +60,8 @@ public class PanelTipos extends JPanel {
 		});
 
 		
-		JButton btnBolleria = crearBoton("BOLLERIA",ruta+"bolleria.png");
-		panel.add(btnBolleria);
+		
+		
 		btnBolleria.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				v.mostrarPanelProductos(Productos.BOLLERIA);
@@ -56,16 +69,16 @@ public class PanelTipos extends JPanel {
 		});
 	
 		
-		JButton btnGominiolas = crearBoton("GOMINOLAS",ruta+"gominolas.png");
-		panel.add(btnGominiolas);
+		
+
 		btnGominiolas.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				v.mostrarPanelProductos(Productos.GOMINOLA);
 			}
 		});
 		
-		JButton btnSnacks = crearBoton("SNACKS",ruta+"snakcs.png");
-		panel.add(btnSnacks);
+		
+
 		btnSnacks.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				v.mostrarPanelProductos(Productos.SNACK);
