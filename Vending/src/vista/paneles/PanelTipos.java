@@ -35,7 +35,8 @@ public class PanelTipos extends JPanel {
 		
 		panel.setPreferredSize(new Dimension(100, 100));
 		add(panel,BorderLayout.CENTER);
-		panel.setLayout(new GridLayout(4, 1, 0, 0));
+		
+		panel.setLayout(new GridLayout(4, 1, 10, 10));
 		
 		JButton btnBebidas = crearBoton("BEBIDAS",ruta+"bebidas.png");
 		panel.add(btnBebidas);
@@ -77,7 +78,7 @@ public class PanelTipos extends JPanel {
 		JButton boton = new JButton(nombre);
 		ImageIcon imagenOriginal = new ImageIcon(rutaImagen);
 		// Escalar la imagen al tamaño del botón
-		Image imagenEscalada = imagenOriginal.getImage().getScaledInstance(100, 100, Image.SCALE_SMOOTH);
+		Image imagenEscalada = imagenOriginal.getImage().getScaledInstance(150, 150, Image.SCALE_SMOOTH);
 		ImageIcon iconoEscalado = new ImageIcon(imagenEscalada);
 		// Establecer la imagen escalada como icono del botón
 		boton.setIcon(iconoEscalado);
