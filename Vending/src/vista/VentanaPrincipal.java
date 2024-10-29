@@ -13,6 +13,7 @@ import javax.swing.SwingUtilities;
 import javax.swing.border.EmptyBorder;
 
 import controlador.Administrador;
+import vista.paneles.PanelCambio;
 import vista.paneles.PanelInicial;
 import vista.paneles.PanelInterno;
 import vista.paneles.PanelPago;
@@ -75,6 +76,9 @@ public class VentanaPrincipal extends JFrame {
     // Método para volver al PanelPrincipal
     public void mostrarPanelInicio() {
         cambiarPanel(new PanelInicial(this));
+    }
+    public void mostrarPanelCambio(double cantTotal,double cantPagada ) {
+    	cambiarPanel(new PanelCambio(this, cantTotal, cantPagada));
     }
     public void mostrarPanelResumen() {
         cambiarPanel(new PanelResumen(this));
