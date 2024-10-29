@@ -14,7 +14,24 @@ public class Productos {
 		public static String[] imagenes= {"img0.png","img1.png","img2.png","img3.png","img4.png","img5.png","img6.png","img7.png","img8.png","img9.png","noimg.png","noimg.png","noimg.png","noimg.png","noimg.png","noimg.png"};
 		public static int [] cantidadComprada= new int[16];
 		
-		
+		public static String tipoToString(int n) {
+			String tipo="";
+			switch (n) {
+			case BEBIDA: tipo="Bebida";
+			break;
+			case BOLLERIA: tipo="Bolleria";
+			break;
+			case GOMINOLA: tipo="Gominola";
+			break;
+			case SNACK: tipo ="Snack";
+			break;
+			default: tipo="Sin asignar";
+			}
+			return tipo;
+		}
+		public static String toString(int n) {
+			return "ID: "+identificador[n]+" ,Nombre: " +nombres[n]+", Tipo: "+tipoToString(tipos[n])+", Precio: "+precios[n]+", Imagen: "+imagenes[n];
+		}
 		
 		
 

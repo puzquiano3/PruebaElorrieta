@@ -87,10 +87,8 @@ public class GestorProductos {
 					cont++;				
 				}
 			}
-			return id;
-					
+			return id;		
 	}
-		
 		
 		return null;
 	
@@ -115,6 +113,6 @@ public class GestorProductos {
 		Productos.cantidadComprada[getPosicion(id)]++;
 		
 	}
-
-
 }
+
+
