@@ -17,6 +17,8 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.Color;
+import javax.swing.DropMode;
 
 public class PanelPago extends JPanel {
 	private VentanaPrincipal v;
@@ -49,6 +51,10 @@ public class PanelPago extends JPanel {
 		lblDebe= new JLabel(String.format("Debe: %.2f",pendiente));
 		lblDebe.setFont(fuente);
 		textArea = new JTextArea();
+		textArea.setTabSize(15);
+		textArea.setLineWrap(true);
+		textArea.setBackground(new Color(255, 128, 255));
+		textArea.setFont(textArea.getFont().deriveFont(textArea.getFont().getSize() + 12f));
 		textArea.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {

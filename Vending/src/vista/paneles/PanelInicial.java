@@ -37,8 +37,6 @@ public class PanelInicial extends JPanel {
 		JLabel lblNewLabel = new JLabel("BIENVENIDOS A MI APLICACION");
 		panel.add(lblNewLabel);
 	
-	
-
 	}
 
 }
