@@ -79,11 +79,11 @@ public class PanelCambio extends JPanel {
 			    @Override
 			    public void run() {
 			        try {
-			            Thread.sleep(10000); 
-			            resetearStrings();
-			            v.mostrarPanelInicio(); 
+			            Thread.sleep(5000); 
+			            resetearStrings();// Pausa de 10 segundos
+			            v.mostrarPanelInicio(); // Llama al método después de la pausa
 			        } catch (InterruptedException e) {
-			            e.printStackTrace(); 
+			            e.printStackTrace(); // Manejo de la excepción si el hilo es interrumpido
 			        }
 			    }
 			}).start();

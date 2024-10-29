@@ -41,7 +41,7 @@ public class PanelTipos extends JPanel {
 		panel.add(btnBebidas);
 		JButton btnBolleria = crearBoton("BOLLERIA",ruta+"bolleria.png");
 		JButton btnGominiolas = crearBoton("GOMINOLAS",ruta+"gominolas.png");
-		JButton btnSnacks = crearBoton("SNACKS",ruta+"snacks.png");
+		JButton btnSnacks = crearBoton("SNACKS",ruta+"snakcs.png");
 		panel.add(btnBolleria);
 		panel.add(btnGominiolas);
 		panel.add(btnSnacks);
