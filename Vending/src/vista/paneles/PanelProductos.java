@@ -5,6 +5,7 @@ import java.awt.GridLayout;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.net.URL;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -59,7 +60,9 @@ public class PanelProductos extends JPanel {
        
 
 		for (int n = 0; n < productos.length; n++) {
-			btnProductos[n] = crearBoton(productos[n], "multimedia\\productos\\" + imagenes[n],identificadores[n]);
+			String rutaImagen = "/multimedia/productos/"+imagenes[n]; 
+			URL imagenURL=getClass().getResource(rutaImagen);
+			btnProductos[n] = crearBoton(productos[n], imagenURL,identificadores[n]);
 			btnProductos[n].addActionListener(new ActionListener() {
 				
 				@Override
@@ -133,7 +136,7 @@ public class PanelProductos extends JPanel {
 			
 	}
 	}
-	private JButton crearBoton(String nombre, String rutaImagen,int id) {
+	private JButton crearBoton(String nombre, URL rutaImagen,int id) {
 		JButton boton = new JButton();
 		ImageIcon imagenOriginal = new ImageIcon(rutaImagen);
 		// Escalar la imagen al tamaño del botón

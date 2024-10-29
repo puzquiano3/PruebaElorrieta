@@ -15,6 +15,8 @@ import java.awt.FlowLayout;
 import java.awt.Image;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.net.URL;
+
 import javax.swing.ImageIcon;
 
 public class PanelInicial extends JPanel {
@@ -43,8 +45,9 @@ public class PanelInicial extends JPanel {
 		
 		JLabel lblMaquina = new JLabel();
 	
-		String rutaImagen="multimedia\\maquina.png";
-		ImageIcon imagenOriginal = new ImageIcon(rutaImagen);
+		String rutaImagen="/multimedia/maquina.png";
+		URL imagenURL = getClass().getResource(rutaImagen);
+		ImageIcon imagenOriginal = new ImageIcon(imagenURL);
 		Dimension dimension=getSize();
 		
 		// Escalar la imagen al tamaño del botón

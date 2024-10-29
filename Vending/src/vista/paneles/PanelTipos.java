@@ -8,6 +8,7 @@ import vista.VentanaPrincipal;
 import javax.swing.JButton;
 import javax.swing.ImageIcon;
 import java.awt.event.ActionListener;
+import java.net.URL;
 import java.awt.event.ActionEvent;
 import java.awt.GridLayout;
 import java.awt.Image;
@@ -23,7 +24,7 @@ import java.awt.Font;
 public class PanelTipos extends JPanel {
 
 	private static final long serialVersionUID = 1L;
-	private String ruta="multimedia\\tipos\\";
+	private String ruta="/multimedia/tipos/";
 
 	/**
 	 * Create the panel.
@@ -37,11 +38,15 @@ public class PanelTipos extends JPanel {
 		add(btnAtras,BorderLayout.NORTH);	
 		add(panel,BorderLayout.CENTER);
 		panel.setLayout(new GridLayout(4, 1, 10, 10));
-		JButton btnBebidas = crearBoton("BEBIDAS",ruta+"bebidas.png");
+		URL imagenURL = getClass().getResource(ruta+"bebidas.png");
+		JButton btnBebidas = crearBoton("BEBIDAS",imagenURL);
 		panel.add(btnBebidas);
-		JButton btnBolleria = crearBoton("BOLLERIA",ruta+"bolleria.png");
-		JButton btnGominiolas = crearBoton("GOMINOLAS",ruta+"gominolas.png");
-		JButton btnSnacks = crearBoton("SNACKS",ruta+"snacks.png");
+		imagenURL = getClass().getResource(ruta+"bolleria.png");
+		JButton btnBolleria = crearBoton("BOLLERIA",imagenURL);
+		imagenURL = getClass().getResource(ruta+"gominolas.png");
+		JButton btnGominiolas = crearBoton("GOMINOLAS",imagenURL);
+		imagenURL = getClass().getResource(ruta+"snacks.png");
+		JButton btnSnacks = crearBoton("SNACKS",imagenURL);
 		panel.add(btnBolleria);
 		panel.add(btnGominiolas);
 		panel.add(btnSnacks);
@@ -87,7 +92,7 @@ public class PanelTipos extends JPanel {
 		});
 
 	}
-	private JButton crearBoton(String nombre, String rutaImagen) {
+	private JButton crearBoton(String nombre, URL rutaImagen) {
 		JButton boton = new JButton(nombre);
 		ImageIcon imagenOriginal = new ImageIcon(rutaImagen);
 		// Escalar la imagen al tamaño del botón
