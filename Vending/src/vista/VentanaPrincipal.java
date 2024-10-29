@@ -77,6 +77,17 @@ public class VentanaPrincipal extends JFrame {
     public void mostrarPanelInicio() {
         cambiarPanel(new PanelInicial(this));
     }
+    public void mostrarPanelInicioRetardado(long milis) {
+        cambiarPanel(new PanelInicial(this));
+    
+    try {
+		Thread.sleep(milis);
+		mostrarPanelInicio();
+	} catch (InterruptedException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+    }
     public void mostrarPanelCambio(double cantTotal,double cantPagada ) {
     	cambiarPanel(new PanelCambio(this, cantTotal, cantPagada));
     }

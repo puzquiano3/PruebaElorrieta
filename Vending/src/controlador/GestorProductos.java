@@ -73,7 +73,7 @@ public class GestorProductos {
 				total+=Productos.cantidadComprada[n]*Productos.precios[n]*productoIva;
 			}
 		}
-		
+		total=Math.round(total*100.0)/100.0;
 		return total;
 	}
 	public static int[] getIdentificadoresTipo(int tipo) {

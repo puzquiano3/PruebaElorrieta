@@ -70,8 +70,9 @@ public class PanelPago extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
 				
-				pagar();
-			}
+				if(pagar()) {
+				v.mostrarPanelCambio(cantTotal, pagado);
+			}}
 		});
 		btnAtras.addActionListener(new ActionListener() {
 			
@@ -79,12 +80,14 @@ public class PanelPago extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
 				v.mostrarPanelResumen();
+				
 			}
 		});
 
 	}
 	
-	private void pagar() {
+	private boolean pagar() {
+		boolean result=false;
 		double pago;
 		String pagoTexto;
 		
@@ -93,6 +96,7 @@ public class PanelPago extends JPanel {
 			JOptionPane.showMessageDialog(null, "Introduzca una cantidad");
 		} else {
 			try {pago=Double.parseDouble(pagoTexto);
+			
 			pagado+=pago;
 			pendiente-=pago;
 			
@@ -100,24 +104,24 @@ public class PanelPago extends JPanel {
 				
 			if(pendiente<=0) {
 				lblDebe.setText(String.format("Su cambio es: %.2f",pendiente*-1));
-				v.mostrarPanelCambio(cantTotal, pagado);
+				result=true;
+				
 				
 			}else {
 				lblDebe.setText(String.format("Debe: %.2f",pendiente));
 				
 			}
-			
-			
 				
 			}catch(Exception e) {
 				JOptionPane.showMessageDialog(null, "El valor introducido no es correcto"+e.getMessage());
+				e.printStackTrace();
 				
 			}
 		}
 		
 		
 		
-		
+		return result;
 		
 		
 	}

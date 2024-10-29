@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Arrays;
 
 import javax.swing.JButton;
 import javax.swing.JPanel;
@@ -26,13 +27,18 @@ public class PanelResumen extends JPanel {
 	}
 	
 	private void inicializar(VentanaPrincipal v) {
-		JButton atras = new JButton("ATRAS");
+		JButton atras = new JButton("ANULAR COMPRA");
+		JButton comprarMas= new JButton("SEGUIR COMPRANDO");
 		JButton pagarCompra= new JButton("REALIZAR PAGO");
+		JPanel botoneraSuperior= new JPanel();
+		
 		setLayout(new BorderLayout());
 		textArea = new JTextArea();  // Ajusta las filas y columnas según sea necesario
         textArea.setLineWrap(true);
         textArea.setWrapStyleWord(true);
-        add(atras,BorderLayout.NORTH);
+        botoneraSuperior.add(atras);
+        botoneraSuperior.add(comprarMas);
+        add(botoneraSuperior,BorderLayout.NORTH);
         add(new JScrollPane(textArea),BorderLayout.CENTER);
         add(pagarCompra,BorderLayout.SOUTH);
         rellenarProductosComprados();
@@ -41,7 +47,17 @@ public class PanelResumen extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
+				Arrays.fill(Productos.cantidadComprada, 0);
+				v.mostrarPanelInicio();
+			}
+		});
+        comprarMas.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
 				v.mostrarPanelTipos();
+				
 			}
 		});
         
