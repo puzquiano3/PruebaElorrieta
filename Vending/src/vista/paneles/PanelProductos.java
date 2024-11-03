@@ -70,7 +70,6 @@ public class PanelProductos extends JPanel {
 					// TODO Auto-generated method stub
 					int id=Integer.parseInt( e.getActionCommand());
 				 GestorProductos.comprar(id);
-				 int pos=GestorProductos.getPosicion(id);
 				rellenarProductosComprados();
 				
 					

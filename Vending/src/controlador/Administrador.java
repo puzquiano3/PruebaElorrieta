@@ -244,9 +244,12 @@ public class Administrador {
 
 	public static double obtenerPrecio(Scanner t) {
 		double precio;
+		String precioTexto;
 		t.nextLine();
 		System.out.println("Introduzca el nuevo precio");
 		try {
+			//precioTexto=t.nextLine();
+	
 			precio = t.nextDouble();
 			return precio;
 		} catch (Exception e) {

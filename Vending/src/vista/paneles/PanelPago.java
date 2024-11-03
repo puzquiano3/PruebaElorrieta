@@ -37,7 +37,7 @@ public class PanelPago extends JPanel {
 	public PanelPago(VentanaPrincipal v) {
 		
 		this.v=v;
-		setLayout(new GridLayout(0, 1, 0, 0));
+		setLayout(new GridLayout(0, 1, 100, 0));
 		Font fuente=new Font("Tahoma", Font.PLAIN, 25);
 		cantTotal=GestorProductos.totalConIva();
 		pagado=0;
