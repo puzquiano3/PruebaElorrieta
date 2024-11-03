@@ -30,9 +30,7 @@ public class PanelProductos extends JPanel {
 
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Create the panel.
-	 */
+
 	String[] productos;
 	double[] precios;
 	String[] imagenes;
@@ -54,9 +52,9 @@ public class PanelProductos extends JPanel {
 		JButton btnResumen= new JButton("VER RESUMEN");
 		principal=new JPanel();
 		principal.setLayout(new GridLayout(1,2));
-       if(GestorProductos.numProductosTipo(tipo)>0) {
-		lblProductos = new JLabel[productos.length];
-		btnProductos = new JButton[productos.length];
+		if(GestorProductos.numProductosTipo(tipo)>0) {
+			lblProductos = new JLabel[productos.length];
+			btnProductos = new JButton[productos.length];
        
 
 		for (int n = 0; n < productos.length; n++) {
@@ -86,6 +84,7 @@ public class PanelProductos extends JPanel {
 			textArea.setFont(new Font("Monospaced", Font.PLAIN, 18));
 	        textArea.setLineWrap(true);
 	        textArea.setWrapStyleWord(true);
+	        textArea.setEditable(false);
 	        
 		
 		principal.add(botonera);
